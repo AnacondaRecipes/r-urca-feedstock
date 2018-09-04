@@ -8,7 +8,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: urca_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/urca_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/urca/urca_{{ version }}.tar.gz
@@ -31,6 +30,9 @@ requirements:
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
 
   host:
     - r-base
